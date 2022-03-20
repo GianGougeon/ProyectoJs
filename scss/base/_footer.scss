@@ -1,0 +1,149 @@
+//estilos
+@import "../components/variables";
+
+
+
+/* Footer pc */
+h3{
+    font-size: 1em;
+}
+footer {
+    background-color: $colores-foothead;
+
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
+    box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
+}
+
+#logo-footer {
+    @include logo;
+    font-size: 2.5em;
+    color: $colores-txt2;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    padding-top: 0;
+
+    &:hover {
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+}
+
+
+.mt-03 {
+    padding-top: 4em;
+}
+
+.footer-copy-pad {
+    padding-top: 4em;
+}
+
+.footer-copy {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-top: 1px solid #afbef03a;
+    padding-top: 2em;
+    width: 90%;
+}
+
+.social-color {
+    fill: #384e77;
+}
+
+.social-color-2:hover {
+
+    fill: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+.text-whitehover {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: inherit;
+
+    &:hover {
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+    }
+}
+
+.text-footer-color {
+    color: #8bbeb2;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+
+}
+
+.text-decoration-none {
+    list-style: none;
+}
+
+/* tienda */
+.text-reset {
+    --bs-text-opacity: 1;
+    color: inherit
+}
+
+
+/* Contacto */
+
+
+@media (min-width: 768px) {
+    .footer-contact {
+        width: 200px;
+    }
+}
+
+.footer-contact-txt {
+    padding-left: 1em;
+}
+
+@media (min-width: 577px) {
+    .faq-footer {
+        padding-top: 3em;
+        width: 175px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .col- {
+        text-align: center;
+    }
+
+    .faq-footer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .footer-sm-line {
+        border-bottom: 1px solid rgba(128, 125, 125, 0.342);
+        width: 80%;
+        padding: 4% 0;
+    }
+}
+
+.fa-home:before {
+    content: "\f015";
+}

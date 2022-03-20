@@ -1,0 +1,36 @@
+
+// Estilos
+@import "components/variables";
+@import "base/fonts";
+@import "components/mixin";
+
+
+// Header 
+@import "base/header";
+// Divisor
+@import "components/divider";
+// Footer
+@import "base/footer";
+
+// Views //
+
+@import "components/marca";
+@import "components/destacado";
+@import "components/txt-image";
+@import "components/tienda";
+@import "components/nuevo";
+@import "components/swap";
+
+
+
+@import "views/index";
+@import "views/local";
+@import "views/nosotros";
+// destacado
+
+// tienda
+@import "views/chaquetas";
+@import "views/pantalones";
+@import "views/camisetas";
+
+

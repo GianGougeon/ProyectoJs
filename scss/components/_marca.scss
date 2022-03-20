@@ -1,0 +1,179 @@
+@import "../components/variables";
+
+/* marca */
+.marca {
+    --hero-gap: 60px;
+    background-color: white;
+}
+
+.marca {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.marca h2 {
+    font-size: calc(1rem + 8vmin);
+    font-weight: 600;
+    font-family: 'Yellowtail';
+    color: $colores-foothead;
+}
+
+.marca p {
+    font-size: calc(0.4rem + 1.25vmin);
+    line-height: 1.65;
+    color: $colores-txt2;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.caption {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: white;
+    z-index: 2;
+    font-size: 0.6rem;
+}
+
+.parallax-wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-perspective: 10px;
+    perspective: 10px;
+}
+
+.parallax-content {
+    position: relative;
+    width: 100%;
+    height: calc(97.6vh - var(--hero-gap));
+}
+
+.hero {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    z-index: 1;
+    -webkit-transform: translateZ(1px);
+    transform: translateZ(1px);
+}
+
+.hero .marca-titulo {
+    color: white;
+    z-index: 2;
+    text-align: center;
+    -webkit-transform: translateZ(-2px) scale(1.2);
+    transform: translateZ(-2px) scale(1.2);
+}
+
+.hero .marca-titulo p {
+    margin-top: 0.5rem;
+    font-size: calc(0.9rem + 0.75vmin);
+}
+
+.hero .marca-titulo a {
+    color: white;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: translateZ(8px);
+    transform: translateZ(8px);
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+#marca-bag {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+
+
+
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+}
+
+.marca-content {
+    position: relative;
+    margin: 0 auto;
+    padding: var(--hero-gap) 2rem;
+    max-width: 725px;
+    background-color: white;
+}
+
+.marca-content>*+* {
+    margin-top: 2rem;
+}
+
+.scroll-icon-container {
+    --size: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    overflow: hidden;
+    top: calc(var(--size) * -1);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: calc(var(--size) * 2);
+    height: calc(var(--size) * 2);
+    border-radius: 0.15rem;
+    background-color: inherit;
+    border-radius: 62px;
+    -webkit-box-shadow: 20px 20px 60px #c7c7c7,
+        -20px -20px 60px #f9f9f9;
+    box-shadow: 20px 20px 60px #c7c7c7,
+        -20px -20px 60px #f9f9f9;
+    z-index: 4;
+
+    &:active {
+        background: #e0e0e0;
+        -webkit-box-shadow: inset 25px 25px 49px #c7c7c7,
+            inset -25px -25px 49px #f9f9f9;
+        box-shadow: inset 25px 25px 49px #c7c7c7,
+            inset -25px -25px 49px #f9f9f9;
+    }
+}
+
+.scroll-icon-container .icon--down-arrow {
+    width: var(--size);
+    height: var(--size);
+}

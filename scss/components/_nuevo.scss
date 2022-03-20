@@ -1,0 +1,98 @@
+@import "../components/variables";
+
+/* Portada/intro nuevo */
+
+
+.nuevo-section{
+    padding-top: 7em;
+    padding-bottom: 7em;
+}
+.nuevo-section-portada {
+    background-color: white;
+    
+}
+
+.img-nuevo-portada {
+    width: 100%;
+
+}
+
+.img-nuevo-portada2 {
+    width: 100%;
+    box-shadow: -12px 9px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+@media (max-width: 991px) {
+    .img-nuevo-portada2 {
+        display: none
+    }
+}
+
+.div-tienda-b-n {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+}
+.t2b-n {
+    padding-top: 24px;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+    display: none;
+}
+@media screen and (min-width:1024px) {
+    .t2b-n {
+        padding-top: 16px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* tienda */
+.logo-sec-nuevo {
+    @include logo;
+    font-size: 1.35em;
+    color: $colores-foothead;
+}
+
+/* Imagne hover */
+img {
+    vertical-align: unset;
+}
+
+.img-nuevo {
+    position: relative;
+    margin: 0 auto;
+
+    height: auto;
+    width: 101%;
+}
+
+.img-nuevo img {
+    position: absolute;
+    left: 0;
+    height: auto;
+    width: 101%;
+    -webkit-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+}
+
+.img-nuevo .img-top:hover {
+    opacity: 0;
+}

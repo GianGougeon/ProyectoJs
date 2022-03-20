@@ -1,0 +1,175 @@
+// Variables
+@import "../components/variables";
+
+// Camisetas
+
+.camisetas-body{
+    background-color: white;
+}
+/* Titulo */
+.section-title-container-b {
+    line-height: 1.6;
+    font-size: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    margin-bottom: 5em;
+    max-width: 1080px;
+    
+}
+
+.section-title-center-b {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.6em;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+}
+
+.section-title-cont-b {
+    font-size: 1.1em;
+    line-height: 1.3;
+    margin: 0 15px;
+    text-align: center;
+    text-transform: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: transparent;
+    font-family: $Montserrat;
+    padding: 0 2em;
+}
+
+.section-title-b b {
+    font-size: 1.6em;
+    line-height: 1.3;
+    flex: 1;
+    height: 2px;
+    opacity: 0.1;
+    background-color: currentColor;
+}
+.section-line {
+    font-size: 1.6em;
+    line-height: 1.3;
+    flex: 1;
+    height: 2px;
+    opacity: 0.1;
+    background-color: currentColor;
+}
+
+/* tienda */
+.tienda-section-c {
+    padding: 3em 0;
+}
+
+/* catalogo */
+.t12c-c {
+
+    padding-left: 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: .25em 0;
+
+}
+
+.t12c-c-style {
+    font-family: $TiemposFont;
+    color: $colores-foothead;
+}
+
+.t12c-c-style2 {
+    text-decoration: none;
+}
+
+.t12c-c-style3 {
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end;
+    color: red;
+}
+
+@media screen and (min-width:701px) {
+    .t12b-c {
+        padding-top: 10px;
+        display: block;
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    .t12b-c {
+        padding-top: 10px;
+        display: block;
+    }
+
+    .logo-sec {
+        @include logo;
+        color: $colores-foothead;
+        padding-left: .75em;
+        font-size: 1.1em;
+
+    }
+}
+/* boton atras */
+.button-volver {
+    display: inline-block;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 1em;
+    background-color: $colores-foothead;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 16px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    margin: auto;
+}
+@media (max-width:480px){
+    .button-volver{
+        font-size: .75em;
+    }
+}
+.button-volver-div {
+    display: flex;
+    justify-content: center;
+}
+
+.button-volver span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.button-volver span:after {
+    content: '«';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -25px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.button-volver:hover span {
+    padding-left: 15px;
+}
+
+.button-volver:hover span:after {
+    opacity: 1;
+    left: 0;
+}
+
+.volver-div{
+    margin-left: 2%;
+    margin-top: 3%;
+}

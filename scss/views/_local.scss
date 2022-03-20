@@ -1,0 +1,32 @@
+// Variables
+@import "../components/variables";
+
+
+.page-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: arial;
+    font-size: 1.30em;
+    padding: 3em 3em;
+    border-bottom: 1px solid #cac5c5;
+    margin: 0 40px;
+}
+
+.sec-map-txt {
+    padding: 3em;
+}
+
+strong {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+@media screen and (max-width:991px) {
+    .local-dire {
+        padding-top: 2em;
+    }
+}
