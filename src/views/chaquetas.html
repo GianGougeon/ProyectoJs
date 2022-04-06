@@ -32,18 +32,18 @@
 </head>
 
 <body>
-    <!-- Encabezado -->
-    <header class="navbar navbar-expand-lg navbar-light">
+    <!-- Header -->
+    <header id="header" class="navbar navbar-expand-lg navbar-light" style="position: sticky">
         <nav class="container-fluid">
             <!-- logo -->
             <ul id="user-navbar">
-                <li>
+                <li class="text-decoration-none">
                     <h1>
-                        <a href="../../index.html" class="logo">GenGe</a>
+                        <a href="./../../index.html" class="logo">Genge</a>
                     </h1>
                 </li>
                 <li id="disable">
-                    <a href="../../index.html" class=" nav-item nav-link">
+                    <a href="./../../index.html" class="nav-item nav-link">
                         <span class="navbar-pad">
                             <!-- user icon mobile -->
                             <svg class="fill-icon-navbar" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -64,8 +64,8 @@
                     </a>
                 </li>
             </ul>
-            <button aria-label="Menú" type="button" id="navbar-color" class="navbar-light navbar-toggler" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
+            <button aria-label="Menú" type="button" id="navbar-color" class="navbar-light navbar-toggler"
+                data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <!-- icono hamburger -->
                 <span class="">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172"
@@ -86,60 +86,65 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav navbar-nav-border navbar-pad-ul">
                     <li id="navbar-pad-li">
-                        <a href="../../index.html#tienda" class="txt-header nav-item nav-link">
+                        <a href="./../../index.html#tienda" class="txt-header nav-item nav-link">
                             <span class="header-effect txt-header">
                                 Tienda
                             </span>
                         </a>
                     </li>
                     <li id="navbar-pad-li">
-                        <a href="../../index.html#nuevo" class="navbar-pad-li txt-header nav-item nav-link">
+                        <a href="./../../index.html#nuevo" class="navbar-pad-li txt-header nav-item nav-link">
                             <span class="txt-header header-effect">
                                 Nuevo
                             </span>
                         </a>
                     </li>
                     <li id="navbar-pad-li">
-                        <a href="../../src/views/local.html" class="txt-header nav-item nav-link">
+                        <a href="./local.html" class="txt-header nav-item nav-link">
                             <span class="txt-header header-effect">
                                 Nuestro local
                             </span>
                         </a>
                     </li>
                     <li id="navbar-pad-li">
-                        <a href="../../src/views/nosotros.html" class="txt-header nav-item nav-link"><span
+                        <a href="./nosotros.html" class="txt-header nav-item nav-link"><span
                                 class="txt-header header-effect">
                                 Nosotros
                             </span>
                         </a>
                     </li>
                 </ul>
-
                 <div class="navbar-nav ms-auto icon-nav">
                     <!-- perfil -->
-                    <li id="disable2">
-                        <a href="../../index.html" class=" nav-item nav-link">
-                            <span class="navbar-pad">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 172 172"
-                                    width="35px" height="35px" style=" fill:#000000;">
-                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
-                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
-                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-                                        <path d="M0,172v-172h172v172z" fill="none"></path>
-                                        <g class="fill-icon-navbar">
-                                            <path
-                                                d="M83.49097,0.03149c-47.06394,1.26982 -84.35819,40.14728 -83.67135,87.22333c0.68684,47.07605 39.09943,84.84894 86.18038,84.74518c47.47316,-0.05627 85.94373,-38.52684 86,-86c0.00138,-23.2446 -9.40665,-45.49984 -26.08063,-61.69522c-16.67398,-16.19537 -39.1937,-24.95145 -62.42841,-24.27329zM86,10.75c28.25359,-0.04858 54.14504,15.75997 67.01033,40.91454c12.86529,25.15456 10.5284,55.40049 -6.04817,78.28029c-16.83408,-14.78286 -38.56114,-22.78225 -60.96216,-22.44482c-22.40102,-0.33743 -44.12808,7.66196 -60.96216,22.44482c-16.57657,-22.8798 -18.91347,-53.12572 -6.04817,-78.28029c12.86529,-25.15456 38.75674,-40.96312 67.01033,-40.91454zM87.56421,21.53149c-10.24147,-0.42614 -20.21346,3.34462 -27.61057,10.44054c-7.39711,7.09591 -11.57892,16.90264 -11.57864,27.15297c0.0237,20.76989 16.85511,37.6013 37.625,37.625c20.48468,0.01376 37.21625,-16.36247 37.64215,-36.84273c0.4259,-20.48025 -15.61039,-37.53792 -36.07793,-38.37578zM86,32.25c14.84265,0 26.875,12.03235 26.875,26.875c0,14.84265 -12.03235,26.875 -26.875,26.875c-14.84265,0 -26.875,-12.03235 -26.875,-26.875c0.01777,-14.83529 12.03971,-26.85723 26.875,-26.875zM86,118.25c19.88957,-0.36925 39.18992,6.75877 54.06494,19.96729c-14.1373,14.71366 -33.66016,23.03078 -54.06494,23.03271c-20.40478,-0.00193 -39.92764,-8.31905 -54.06494,-23.03271c14.87502,-13.20852 34.17538,-20.33653 54.06494,-19.96729z">
-                                            </path>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </span>
-                        </a>
-                    </li>
+                    <div>
+                        <ul id="disable-margin" class="text-decoration-none">
+                            <li id="disable2">
+                                <a href="./../../index.html" class="nav-item nav-link ">
+                                    <span class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 172 172"
+                                            width="35px" height="35px" style=" fill:#000000;">
+                                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                                stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                                stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                                font-weight="none" font-size="none" text-anchor="none"
+                                                style="mix-blend-mode: normal">
+                                                <path d="M0,172v-172h172v172z" fill="none"></path>
+                                                <g class="fill-icon-navbar">
+                                                    <path
+                                                        d="M83.49097,0.03149c-47.06394,1.26982 -84.35819,40.14728 -83.67135,87.22333c0.68684,47.07605 39.09943,84.84894 86.18038,84.74518c47.47316,-0.05627 85.94373,-38.52684 86,-86c0.00138,-23.2446 -9.40665,-45.49984 -26.08063,-61.69522c-16.67398,-16.19537 -39.1937,-24.95145 -62.42841,-24.27329zM86,10.75c28.25359,-0.04858 54.14504,15.75997 67.01033,40.91454c12.86529,25.15456 10.5284,55.40049 -6.04817,78.28029c-16.83408,-14.78286 -38.56114,-22.78225 -60.96216,-22.44482c-22.40102,-0.33743 -44.12808,7.66196 -60.96216,22.44482c-16.57657,-22.8798 -18.91347,-53.12572 -6.04817,-78.28029c12.86529,-25.15456 38.75674,-40.96312 67.01033,-40.91454zM87.56421,21.53149c-10.24147,-0.42614 -20.21346,3.34462 -27.61057,10.44054c-7.39711,7.09591 -11.57892,16.90264 -11.57864,27.15297c0.0237,20.76989 16.85511,37.6013 37.625,37.625c20.48468,0.01376 37.21625,-16.36247 37.64215,-36.84273c0.4259,-20.48025 -15.61039,-37.53792 -36.07793,-38.37578zM86,32.25c14.84265,0 26.875,12.03235 26.875,26.875c0,14.84265 -12.03235,26.875 -26.875,26.875c-14.84265,0 -26.875,-12.03235 -26.875,-26.875c0.01777,-14.83529 12.03971,-26.85723 26.875,-26.875zM86,118.25c19.88957,-0.36925 39.18992,6.75877 54.06494,19.96729c-14.1373,14.71366 -33.66016,23.03078 -54.06494,23.03271c-20.40478,-0.00193 -39.92764,-8.31905 -54.06494,-23.03271c14.87502,-13.20852 34.17538,-20.33653 54.06494,-19.96729z">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
+
     </header>
 
 
@@ -298,12 +303,17 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div>
+                                        <button class="button-tienda">Comprar</button>
+                                        <button class="button-tienda-2">Añadir al carrito</button>
+                                    </div>
                                     <div class="t12b-c">
                                         <span class="t12c-c t12c-c-style"> The North Face </span>
                                         <span class="t12c-c t12c-c-style2"> GOSEI PUFFER JACKET - Chaqueta de
                                             entretiempo </span>
-                                        <span class="t12c-c t12c-c-style3"> 119,95 € </span>
+                                        <span class="t12c-c t12c-c-style3"> 119,95 $ </span>
                                         <span class="logo-sec-tienda txt-imag-txt"> Genge </span>
+
                                     </div>
                                 </article>
                             </div>
@@ -325,11 +335,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div>
+                                        <button class="button-tienda">Comprar</button>
+                                        <button class="button-tienda-2">Añadir al carrito</button>
+                                    </div>
                                     <div class="t12b-c">
                                         <span class="t12c-c t12c-c-style"> CHASIN' </span>
                                         <span class="t12c-c t12c-c-style2"> Chaqueta de entretiempo </span>
-                                        <span class="t12c-c t12c-c-style3"> 149,95 € </span>
+                                        <span class="t12c-c t12c-c-style3"> 149,95 $ </span>
                                         <span class="logo-sec-tienda txt-imag-txt"> Genge </span>
+
                                     </div>
                                 </article>
                             </div>
@@ -351,12 +366,17 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div>
+                                        <button class="button-tienda">Comprar</button>
+                                        <button class="button-tienda-2">Añadir al carrito</button>
+                                    </div>
                                     <div class="t12b-c">
                                         <span class="t12c-c t12c-c-style"> Karl Kani </span>
                                         <span class="t12c-c t12c-c-style2"> RETRO BLOCK PUFFER JACKET UNISEX - Chaqueta
                                             de invierno </span>
-                                        <span class="t12c-c t12c-c-style3"> 119,95 € </span>
+                                        <span class="t12c-c t12c-c-style3"> 119,95 $ </span>
                                         <span class="logo-sec-tienda txt-imag-txt"> Genge </span>
+
                                     </div>
                                 </article>
                             </div>
@@ -378,11 +398,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div>
+                                        <button class="button-tienda">Comprar</button>
+                                        <button class="button-tienda-2">Añadir al carrito</button>
+                                    </div>
                                     <div class="t12b-c">
                                         <span class="t12c-c t12c-c-style"> Ellesse </span>
                                         <span class="t12c-c t12c-c-style2"> LOMBARDY - Chaqueta de entretiempo </span>
-                                        <span class="t12c-c t12c-c-style3"> 79,95 € </span>
+                                        <span class="t12c-c t12c-c-style3"> 79,95 $ </span>
                                         <span class="logo-sec-tienda txt-imag-txt"> Genge </span>
+
                                     </div>
                                 </article>
                             </div>
@@ -404,11 +429,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div>
+                                        <button class="button-tienda">Comprar</button>
+                                        <button class="button-tienda-2">Añadir al carrito</button>
+                                    </div>
                                     <div class="t12b-c">
                                         <span class="t12c-c t12c-c-style"> EA7 Emporio Armani </span>
                                         <span class="t12c-c t12c-c-style2"> Chaqueta de plumas </span>
-                                        <span class="t12c-c t12c-c-style3"> 174,95 € </span>
+                                        <span class="t12c-c t12c-c-style3"> 174,95 $ </span>
                                         <span class="logo-sec-tienda txt-imag-txt"> Genge </span>
+
                                     </div>
                                 </article>
                             </div>
@@ -430,11 +460,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div>
+                                        <button class="button-tienda">Comprar</button>
+                                        <button class="button-tienda-2">Añadir al carrito</button>
+                                    </div>
                                     <div class="t12b-c">
                                         <span class="t12c-c t12c-c-style"> Brave Soul </span>
                                         <span class="t12c-c t12c-c-style2"> MIGUEL - Chaqueta de entretiempo </span>
-                                        <span class="t12c-c t12c-c-style3"> 49,95 € </span>
+                                        <span class="t12c-c t12c-c-style3"> 49,95 $ </span>
                                         <span class="logo-sec-tienda txt-imag-txt"> Genge </span>
+
                                     </div>
                                 </article>
                             </div>

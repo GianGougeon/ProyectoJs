@@ -1,0 +1,18 @@
+/* busqueda compras */
+.busqueda {
+    position: fixed;
+    display: flex;
+    bottom: 100px;
+    right: 40px;
+    z-index: 9999;
+}
+
+.busqueda-icon {
+    transition: all .3s ease-in-out;
+    width: 50px;
+
+    &:hover {
+        transition: all .3s ease-in-out;
+        transform: scale(1.1);
+    }
+}

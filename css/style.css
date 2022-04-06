@@ -30,6 +30,9 @@ img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhos
 header {
   background-color: #0d0630;
   display: inline-block;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 #user-navbar {
@@ -138,6 +141,15 @@ header {
   border-left: 1px solid #afbef03a;
 }
 
+#disable-margin {
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  header {
+    height: 54px;
+  }
+}
 /* mobile */
 @media (max-width: 991px) {
   .icon-nav {
@@ -155,6 +167,10 @@ header {
     border-top: 1px solid #afbef03a;
     padding-top: 1em;
     margin-top: 0.75em;
+  }
+
+  .nav-item {
+    margin-top: 10px;
   }
 
   #user-navbar {
@@ -1309,13 +1325,85 @@ footer {
   position: absolute;
   left: 50%;
   top: 50%;
-  font-size: 4.5vmin;
+  font-size: 3.5vmin;
   -webkit-transform: translate(-50%, -150%);
   -ms-transform: translate(-50%, -150%);
   transform: translate(-50%, -150%);
   text-transform: uppercase;
   font-weight: bold;
   color: white;
+}
+
+/* Boton - comprar- carrito */
+.button-tienda {
+  background-color: #0d0630;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: 0.45rem 0.6rem;
+  margin: 5px 0;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+.button-tienda:hover {
+  background-color: #384e77;
+}
+.button-tienda:focus {
+  box-shadow: none;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.button-tienda-2 {
+  background-color: #ececec;
+  border: 1px solid #384e77;
+  margin-top: 5px;
+  box-sizing: border-box;
+  color: #1a1a1a;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: 0.45rem 0.6rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+.button-tienda-2:hover {
+  background-color: #c7c7c7;
+}
+.button-tienda-2:focus {
+  box-shadow: none;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.button-tienda-bot {
+  transform: translateY(100%);
+  display: inline-block;
 }
 
 @media screen and (min-width: 701px) {
@@ -1577,6 +1665,93 @@ img {
 
 .custom-shape-divider-top-1644203281 .shape-fill {
   fill: #ececec;
+}
+
+/* Carrito compras */
+.carrito {
+  position: fixed;
+  display: flex;
+  bottom: 30px;
+  right: 40px;
+  z-index: 9999;
+}
+
+#flecha-carrito::before {
+  margin-bottom: 10px;
+}
+#flecha-carrito::after {
+  margin-bottom: 10px;
+}
+
+.carrito-icon {
+  transition: all 0.1s ease-in-out;
+  width: 50px;
+}
+.carrito-icon:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.1);
+}
+
+#caja-carrito {
+  border: none;
+  background-color: transparent;
+}
+
+#carrito-ventana {
+  border: 2px solid #0d0630;
+  background-color: #ececec;
+  border-radius: 0;
+  padding: 10px;
+}
+
+.caja-carrito {
+  height: 300px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+/* media carrito */
+@media (min-width: 375px) {
+  .caja-carrito {
+    width: 34vh;
+  }
+}
+@media (min-width: 534px) {
+  .caja-carrito {
+    width: 45vh;
+  }
+}
+@media (min-width: 625px) {
+  .caja-carrito {
+    width: 58vh;
+  }
+}
+@media (min-width: 776px) {
+  .caja-carrito {
+    width: 78vh;
+  }
+}
+@media (min-width: 960px) {
+  .caja-carrito {
+    width: 100vh;
+  }
+}
+/* busqueda compras */
+.busqueda {
+  position: fixed;
+  display: flex;
+  bottom: 100px;
+  right: 40px;
+  z-index: 9999;
+}
+
+.busqueda-icon {
+  transition: all 0.3s ease-in-out;
+  width: 50px;
+}
+.busqueda-icon:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
 }
 
 /* @import "../components/marca"; */
@@ -1909,8 +2084,8 @@ strong {
   display: flex;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: end;
   color: red;
+  padding: 6px 0 13px 0;
 }
 
 @media screen and (min-width: 701px) {

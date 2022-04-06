@@ -17,6 +17,9 @@ img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhos
 header {
     background-color: $colores-foothead;
     display: inline-block;
+    position: sticky;
+    top: 0;
+    z-index: 999;
     
 }
 
@@ -128,6 +131,14 @@ header {
     padding: 0 3em 0 0.75em;
     border-left: 1px solid #afbef03a;
 }
+#disable-margin{
+    margin: 0;
+}
+@media (min-width:992px){
+    header{
+        height: 54px;
+    }
+}
 
 /* mobile */
 @media (max-width: 991px) {
@@ -147,7 +158,9 @@ header {
         padding-top: 1em;
         margin-top: 0.75em;
     }
-
+    .nav-item{
+        margin-top: 10px;
+    }
     #user-navbar {
         margin: 0;
         padding: 0;

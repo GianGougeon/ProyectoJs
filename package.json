@@ -1,0 +1,19 @@
+{
+  "name": "proyectojs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GianGougeon/ProyectoJs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GianGougeon/ProyectoJs/issues"
+  },
+  "homepage": "https://github.com/GianGougeon/ProyectoJs#readme",
+  "description": ""
+}

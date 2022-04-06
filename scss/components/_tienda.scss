@@ -270,8 +270,8 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     max-width: 100%;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -540,18 +540,93 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    
-    font-size: 4.5vmin;
+
+    font-size: 3.5vmin;
     -webkit-transform: translate(-50%, -150%);
-        -ms-transform: translate(-50%, -150%);
-            transform: translate(-50%, -150%);
+    -ms-transform: translate(-50%, -150%);
+    transform: translate(-50%, -150%);
     text-transform: uppercase;
     font-weight: bold;
     color: white;
-    
+
 
 }
 
+
+/* Boton - comprar- carrito */
+.button-tienda {
+    background-color: $colores-foothead;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: 0.45rem .6rem;
+    margin: 5px 0;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+
+    &:hover {
+        background-color: #384e77;
+    }
+
+    &:focus {
+        box-shadow: none;
+        outline: 2px solid white;
+        outline-offset: 2px;
+    }
+}.button-tienda-2 {
+    background-color: $colores-fondo-general;
+    border: 1px solid #384e77;
+    margin-top: 5px;
+    
+    
+    box-sizing: border-box;
+    color: #1a1a1a;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: 0.45rem .6rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+
+    &:hover {
+        background-color: #c7c7c7;
+    }
+
+    &:focus {
+        box-shadow: none;
+        outline: 2px solid white;
+        outline-offset: 2px;
+    }
+}
+.button-tienda-bot{
+    transform: translateY(100%);
+    display: inline-block;
+  }
 
 
 @media screen and (min-width:701px) {
