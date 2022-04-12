@@ -1,81 +1,134 @@
 /* Carrito compras */
 .carrito {
-    position: fixed;
-    display: flex;
-    bottom: 30px;
-    right: 40px;
-    z-index: 9999;
+  position: fixed;
+  display: flex;
+  bottom: 30px;
+  right: 15px;
+  z-index: 9999;
 }
-#flecha-carrito{
-    &::before{
-        margin-bottom: 10px;
-    }
-    &::after{
-        margin-bottom: 10px;
-    }
+.carrito-h{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
 }
 
 .carrito-icon {
+  transition: all .1s ease-in-out;
+  width: 50px;
+
+  &:hover {
     transition: all .1s ease-in-out;
-    width: 50px;
-
-    &:hover {
-        transition: all .1s ease-in-out;
-        transform: scale(1.1);
-    }
+    transform: scale(1.1);
+  }
 }
 
-#caja-carrito {
-    border: none;
-    background-color: transparent;
+// modal
+.modal-window {
+  position: fixed;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.85);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &>div {
+    
+    width: auto;
+    min-width: 700px;
+    max-height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: white;
+  }
+
 }
 
-#carrito-ventana {
-    border: 2px solid #0d0630;
-    background-color: #ececec;
-    border-radius: 0;
-    padding: 10px;
+// boton cerrar
+.modal-close {
+  color: #aaa;
+  border-radius: 5px;
+  background-color: red;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+  }
 }
 
-.caja-carrito {
+/* Demo Styles */
 
-    height: 300px;
+
+
+.modal-window {
+  &>div {
+    border-radius: 1rem;
     overflow-y: scroll;
-    scrollbar-width: none;
+  }
 }
 
-/* media carrito */
-@media (min-width:375px) {
-    .caja-carrito {
-        width: 34vh;
 
-    }
+
+small {
+  color: lightgray;
 }
 
-@media (min-width:534px) {
-    .caja-carrito {
-        width: 45vh;
+/* boton carrito */
 
-    }
-}
+.btn-carrito-style {
 
-@media (min-width:625px) {
-    .caja-carrito {
-        width: 58vh;
-
-    }
-}
-
-@media (min-width:776px) {
-    .caja-carrito {
-        width: 78vh;
-
-    }
-}
-
-@media (min-width:960px) {
-    .caja-carrito {
-        width: 100vh;
-
-    }
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  visibility: visible;
+  pointer-events: auto;
+  box-sizing: border-box;
+  
+  font-family: inherit;
+  text-transform: none;
+  -webkit-appearance: button;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  color: #ededed;
+  background-color: $colores-foothead;
+  
+  cursor: pointer;
+  /* tama */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
