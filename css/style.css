@@ -1686,13 +1686,33 @@ img {
   justify-content: center;
 }
 
-.carrito-icon {
-  transition: all 0.1s ease-in-out;
-  width: 50px;
+.carrito-div-icon {
+  transition: all 0.1s;
 }
-.carrito-icon:hover {
-  transition: all 0.1s ease-in-out;
-  transform: scale(1.1);
+.carrito-div-icon:hover {
+  transition: all 0.1s;
+}
+
+/* numero alerta */
+#numero-alerta {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  bottom: 54px;
+  left: 66px;
+  z-index: 10;
+}
+
+/* tamaño */
+.carrito-icon {
+  width: 50px;
 }
 
 .modal-window {

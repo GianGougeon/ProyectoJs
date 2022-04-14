@@ -52,6 +52,7 @@
     ]
 
     ////////////////////////////////////////////////////// - Chaquetas - //////////////////////////////////////////////////////
+
     const productosChaquetas = [{
     		id: 7,
     		categoria: "chaquetas",
@@ -109,7 +110,7 @@
     		categoria: "pantalones",
     		marca: "Nike Sportswear",
     		nombre: "CLUB - Pantalones deportivos negro",
-    		precio: 44-95,
+    		precio: 44 - 95,
     		img: "./src/"
     	},
     	{
@@ -153,9 +154,9 @@
     		img: "./src/"
     	},
     ]
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////// - productos Nuevo - //////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////// - productos Nuevo - //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     const productosNuevo = [
 
@@ -166,7 +167,7 @@
     		nombre: "Remera lisa Manga corta - Azul",
     		precio: 19.99,
     		img: "./src/assets/img/nuevo/remera-lisa-manga-corta-azul-1.webp",
-			imgAlt: "Remera lisa manga corta - Azul"
+    		imgAlt: "Remera lisa manga corta - Azul"
     	},
     	{
     		id: 20,
@@ -175,7 +176,7 @@
     		nombre: "Remera lisa Manga corta - Celeste",
     		precio: 19.99,
     		img: "./src/assets/img/nuevo/remera-lisa-manga-corta-celeste-1.webp",
-			imgAlt: "Remera lisa manga corta - Celeste"
+    		imgAlt: "Remera lisa manga corta - Celeste",
     	},
     	{
     		id: 21,
@@ -184,7 +185,7 @@
     		nombre: "Remera T-shirt estampada manga corta - Verde",
     		precio: 19.99,
     		img: "./src/assets/img/nuevo/remera-t-shirt-estampada-manga-corta-verde-1.webp",
-			imgAlt: "Remera T-shirt estampada manga corta - Verde"
+    		imgAlt: "Remera T-shirt estampada manga corta - Verde"
     	},
     	{
     		id: 22,
@@ -193,7 +194,7 @@
     		nombre: "Remera T-shirt estampada manga corta - Celeste",
     		precio: 19.99,
     		img: "./src/assets/img/nuevo/remera-t-shirt-estampada-manga-corta-celeste-1.webp",
-			imgAlt: "Remera T-shirt estampada manga corta - Celeste"
+    		imgAlt: "Remera T-shirt estampada manga corta - Celeste"
     	},
     	{
     		id: 23,
@@ -202,7 +203,7 @@
     		nombre: "Remera lisa Manga corta - Gris",
     		precio: 19.99,
     		img: "./src/assets/img/nuevo/remera-lisa-manga-corta-gris-2.webp",
-			imgAlt: "Remera lisa manga corta - Gris"
+    		imgAlt: "Remera lisa manga corta - Gris"
     	},
     	{
     		id: 24,
@@ -211,21 +212,8 @@
     		nombre: "Remera Estampada Manga Corta - Gris",
     		precio: 19.99,
     		img: "./src/assets/img/nuevo/remera-estampada-manga-corta-gris-1.webp",
-			imgAlt: "Remera Estampada Manga Corta - Gris"
+    		imgAlt: "Remera Estampada Manga Corta - Gris"
     	},
+
     ];
 
-
-
-    // Nuevo array let
-    // let camisetas = productos.map((elementoMap) => {
-
-    // 	return {
-    // 		id: elementoMap.id,
-    // 		categoria: elementoMap.categoria,
-    // 		marca: elementoMap.marca,
-    // 		nombre: elementoMap.nombre,
-    // 		precio: elementoMap.precio,
-    // 		img: elementoMap.img
-    // 	}
-    // });

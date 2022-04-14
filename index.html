@@ -31,7 +31,7 @@
     <title>Ropa para hombre | Catálogo de moda onile Genge</title>
 </head>
 
-<body>
+<body onload="inicio();">
 
     <!-- Header -->
     <header id="header" class="navbar navbar-expand-lg navbar-light" style="position: sticky;">
@@ -708,46 +708,45 @@
     </section>
 
 
-    <!-- Carrito -->
-    <section class="carrito">
-        <ul class="text-decoration-none">
-            <li class="text-decoration-none"><a href="#open-modal"><img class="carrito-icon"
-                        src="src/assets/img/bolsa-de-compra.png"></a></li>
-        </ul>
-        <!-- caja -->
-        <div class="container">
-            <div id="open-modal" class="modal-window">
-                <div class="" style="padding: 5% 0;">
-                    <div>
-                        <!-- Elementos generados con JS -->
-                        <div style="margin: auto;" id="items"></div>
-                        <!-- Carrito -->
-                        <div class="container">
-                            <h6 class="carrito-h">Carrito</h6>
-                            <!-- Elementos del carrito -->
-                            <ul id="carrito" style="padding: 0 5%;" class="list-group"></ul>
-                            <hr>
-                            <!-- Precio total -->
-                            <div style="padding: 0 0 0 5%">
-                                <p class="text-right">Total: <span id="total"></span>&dollar;</p>
-                                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
-                                <ul class="text-decoration-none">
-                                    <li><a href="#!" title="Close" class="modal-close">X</a></li>
-                                </ul>
-                            </div>
+   <!-- Carrito -->
+   <section class="carrito">
+    <ul class="text-decoration-none">
+        <li class="text-decoration-none">
+            <a href="#open-modal">
+        <div class="carrito-div-icon">
+                <span id="numero-alerta" class="numero-alerta-box"></span>
+                <img class="carrito-icon" src="src/assets/img/bolsa-de-compra.png">
+            
+        </div>
+        </a>
+        </li>
+    </ul>
+    <!-- caja -->
+    <div class="container">
+        <div id="open-modal" class="modal-window">
+            <div class="" style="padding: 5% 0;">
+                <div>
+                    <!-- Elementos generados con JS -->
+                    <div style="margin: auto;" id="items"></div>
+                    <!-- Carrito -->
+                    <div class="container">
+                        <h6 class="carrito-h">Carrito</h6>
+                        <!-- Elementos del carrito -->
+                        <ul id="carrito" style="padding: 0 5%;" class="list-group"></ul>
+                        <hr>
+                        <!-- Precio total -->
+                        <div style="padding: 0 0 0 5%">
+                            <p class="text-right">Total: <span id="total"></span>&dollar;</p>
+                            <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                            <ul class="text-decoration-none">
+                                <li><a href="#!" title="Close" class="modal-close">X</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-
-
-
-
-
-
+    </div>
     <!-- Busqueda -->
     <div class="busqueda">
         <div>
@@ -756,6 +755,7 @@
         </div>
     </div>
 
+</section>
 
 
 
@@ -763,9 +763,7 @@
 
 
 
-
-
-
+    
 
 
 
@@ -918,14 +916,14 @@
 
 
     <!-- boostrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <!-- scripts -->
     <script src="./js/classes/clasess.js"></script>
-    <script src="./js/data/categoriasData.js"></script>
+    
     <script src="./js/data/simpleData.js"></script>
-    <script src="./js/carritoDeCompras.js"></script>
+    <script defer src="./js/carritoDeCompras.js"></script>
 
 </body>
 
