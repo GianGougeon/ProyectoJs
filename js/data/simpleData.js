@@ -1,5 +1,13 @@
-    ////////////////////////////////////////////////////// - Camisetas - //////////////////////////////////////////////////////
-    const productosCamisetas = [
+    ////////////////////////////////////////////////////// - Productos - //////////////////////////////////////////////////////
+    // Categorias //
+    //
+    // camisetas
+    // chaquetas
+    // pantalones
+    //
+    //Nuevo
+
+    const productosColeccion = [
 
     	{
     		id: 1,
@@ -7,7 +15,8 @@
     		marca: "The North Face",
     		nombre: "SIMPLE DOME TEE - Camiseta estampada",
     		precio: 24.95,
-    		img: "./src/"
+    		img: "/src/assets/img/camisetas/1/53e05d695047435790cf3ffaf5b8e17c.png",
+    		imgAlt: "The North Face - SIMPLE DOME TEE - Camiseta estampada",
     	},
     	{
     		id: 2,
@@ -15,7 +24,8 @@
     		marca: "The North Face",
     		nombre: "SIMPLE DOME TEE - Camiseta estampada negra",
     		precio: 24.95,
-    		img: "./src/"
+    		img: "/src/assets/img/camisetas/3/0ac311689eab49daabc1c2f57ebfbba1.webp",
+    		imgAlt: "SIMPLE DOME TEE - Camiseta estampada negra",
     	},
     	{
     		id: 3,
@@ -23,7 +33,8 @@
     		marca: "YOURTURN",
     		nombre: "UNISEX - Camiseta estampada",
     		precio: 14.99,
-    		img: "./src/"
+    		img: "/src/assets/img/camisetas/2/5bf2af91998542bfb1ae2c855ac0d5f1.webp",
+    		imgAlt: "YOURTURN - UNISEX - Camiseta estampadas",
     	},
     	{
     		id: 4,
@@ -31,7 +42,8 @@
     		marca: "Ellesse",
     		nombre: "VOODOO - Camiseta estampada blanca",
     		precio: 14.99,
-    		img: "./src/"
+    		img: "/src/assets/img/camisetas/4/3c788e6c70ce4a55a3964af934c344bc.webp",
+    		imgAlt: "Ellesse - VOODOO - Camiseta estampada blanca",
     	},
     	{
     		id: 5,
@@ -39,7 +51,8 @@
     		marca: "Ellesse",
     		nombre: "UNISEX - Camiseta estampada negra",
     		precio: 14.99,
-    		img: "./src/"
+    		img: "/src/assets/img/camisetas/5/46412eb180534f91af3cacd9312709fc.webp",
+    		imgAlt: "Ellesse - ALENTE - Camiseta estampada",
     	},
     	{
     		id: 6,
@@ -47,19 +60,17 @@
     		marca: "YOURTURN",
     		nombre: "UNISEX - Camiseta estampada blanca",
     		precio: 14.99,
-    		img: "./src/"
+    		img: "/src/assets/img/camisetas/6/ba591ffaaba04992a8b039fa3f3881a3.webp",
+    		imgAlt: "YOURTURN - UNISEX - Camiseta estampada",
     	},
-    ]
-
-    ////////////////////////////////////////////////////// - Chaquetas - //////////////////////////////////////////////////////
-
-    const productosChaquetas = [{
+    	{
     		id: 7,
     		categoria: "chaquetas",
     		marca: "The North Face",
     		nombre: "GOSEI PUFFER JACKET - Chaqueta de entretiempo",
     		precio: 119.95,
-    		img: "./src/"
+    		img: "/src/assets/img/chaquetas/1/bb6c757c82ba498cb7b0b63d50a28608.png",
+    		imgAlt: "The North Face - GOSEI PUFFER JACKET - Chaqueta de entretiempo",
     	},
     	{
     		id: 8,
@@ -67,7 +78,8 @@
     		marca: "CHASIN",
     		nombre: "Chaqueta de entretiempo",
     		precio: 149.95,
-    		img: "./src/"
+    		img: "/src/assets/img/chaquetas/2/img01_ztat_net-48c11468fb214e23ae9014f534230ebd.png",
+    		imgAlt: "CHASIN - Chaqueta de entretiempo",
     	},
     	{
     		id: 9,
@@ -75,7 +87,8 @@
     		marca: "Karl Kani",
     		nombre: "RETRO BLOCK PUFFER JACKET UNISEX - Chaqueta de invierno",
     		precio: 119.95,
-    		img: "./src/"
+    		img: "/src/assets/img/chaquetas/3/img01_ztat_net-665c9091fbc0425a9aa2c602eedbffa0.png",
+    		imgAlt: "Karl Kani - RETRO BLOCK PUFFER JACKET UNISEX - Chaqueta de invierno",
     	},
     	{
     		id: 10,
@@ -83,7 +96,8 @@
     		marca: "Ellesse",
     		nombre: "LOMBARDY - Chaqueta de entretiempo",
     		precio: 79.95,
-    		img: "./src/"
+    		img: "/src/assets/img/chaquetas/4/img01_ztat_net-e3c08b63a9b940718e5faf1a01121f53.png",
+    		imgAlt: "Ellesse - LOMBARDY - Chaqueta de entretiempo",
     	},
     	{
     		id: 11,
@@ -91,7 +105,8 @@
     		marca: "EA7 Emporio Armani",
     		nombre: "Chaqueta de plumas",
     		precio: 174.95,
-    		img: "./src/"
+    		img: "/src/assets/img/chaquetas/5/img01_ztat_net-7a3eb49a99404047857db0f5acb2047f.png",
+    		imgAlt: "EA7 Emporio Armani - Chaqueta de plumas",
     	},
     	{
     		id: 12,
@@ -99,19 +114,17 @@
     		marca: "Brave Soul",
     		nombre: "MIGUEL - Chaqueta de entretiempo",
     		precio: 49.95,
-    		img: "./src/"
+    		img: "/src/assets/img/chaquetas/6/img01_ztat_net-a7fee901f6c647d48a0bcac45ce9e27d.png",
+    		imgAlt: "Brave Soul - MIGUEL - Chaqueta de entretiempo",
     	},
-    ]
-    ////////////////////////////////////////////////////// - Pantalones - //////////////////////////////////////////////////////
-    const productosPantalones = [
-
     	{
     		id: 13,
     		categoria: "pantalones",
     		marca: "Nike Sportswear",
     		nombre: "CLUB - Pantalones deportivos negro",
-    		precio: 44 - 95,
-    		img: "./src/"
+    		precio: 44.95,
+    		img: "/src/assets/img/pantalones/1/img01_ztat_net-b6f424054bf446a99666969fca73849a.png",
+    		imgAlt: "Nike Sportswear - CLUB - Pantalones deportivos",
     	},
     	{
     		id: 14,
@@ -119,7 +132,8 @@
     		marca: "Nike Sportswear",
     		nombre: "CLUB - Pantalones deportivos gris",
     		precio: 49.95,
-    		img: "./src/"
+    		img: "/src/assets/img/pantalones/4/img01_ztat_net-67f4a15e7d944ad98b8ee6a5e33b0df7.png",
+    		imgAlt: "Nike Sportswear - CLUB - Pantalones deportivos",
     	},
     	{
     		id: 15,
@@ -127,7 +141,8 @@
     		marca: "Only & Sons",
     		nombre: "ONSCAM STAGE CUFF - Pantalones cargo",
     		precio: 34.99,
-    		img: "./src/"
+    		img: "/src/assets/img/pantalones/2/img01_ztat_net-6a14c8ccdc3248f7b13021f08e19b925.png",
+    		imgAlt: "Only & Sons - ONSCAM STAGE CUFF - Pantalones cargo",
     	},
     	{
     		id: 16,
@@ -135,7 +150,8 @@
     		marca: "Ellesse",
     		nombre: "OSTERIA - Pantalones deportivos",
     		precio: 49.95,
-    		img: "./src/"
+    		img: "/src/assets/img/pantalones/3/img01_ztat_net-f9b33fe92d5e4c9e9f5599c2cfe0f174.png",
+    		imgAlt: "Ellesse - OSTERIA - Pantalones deportivos",
     	},
     	{
     		id: 17,
@@ -143,7 +159,8 @@
     		marca: "G-Star",
     		nombre: "ROVIC ZIP TAPERED - Pantalones cargo",
     		precio: 99.95,
-    		img: "./src/"
+    		img: "/src/assets/img/pantalones/5/img01_ztat_net-5859c6fcad6845e583df5b701afae748.png",
+    		imgAlt: "G-Star - ROVIC ZIP TAPERED - Pantalones cargo",
     	},
     	{
     		id: 18,
@@ -151,9 +168,10 @@
     		marca: "Pier One",
     		nombre: "Pantalones deportivos",
     		precio: 27.99,
-    		img: "./src/"
+    		img: "/src/assets/img/pantalones/6/img01_ztat_net-a7918305a7c74db59ffe41dcb13cd4d6.png",
+    		imgAlt: "Pier One - Pantalones deportivos",
     	},
-    ]
+    ];
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////// - productos Nuevo - //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -166,7 +184,7 @@
     		marca: "",
     		nombre: "Remera lisa Manga corta - Azul",
     		precio: 19.99,
-    		img: "./src/assets/img/nuevo/remera-lisa-manga-corta-azul-1.webp",
+    		img: "/src/assets/img/nuevo/remera-lisa-manga-corta-azul-1.webp",
     		imgAlt: "Remera lisa manga corta - Azul"
     	},
     	{
@@ -175,7 +193,7 @@
     		marca: "",
     		nombre: "Remera lisa Manga corta - Celeste",
     		precio: 19.99,
-    		img: "./src/assets/img/nuevo/remera-lisa-manga-corta-celeste-1.webp",
+    		img: "/src/assets/img/nuevo/remera-lisa-manga-corta-celeste-1.webp",
     		imgAlt: "Remera lisa manga corta - Celeste",
     	},
     	{
@@ -184,7 +202,7 @@
     		marca: "",
     		nombre: "Remera T-shirt estampada manga corta - Verde",
     		precio: 19.99,
-    		img: "./src/assets/img/nuevo/remera-t-shirt-estampada-manga-corta-verde-1.webp",
+    		img: "/src/assets/img/nuevo/remera-t-shirt-estampada-manga-corta-verde-1.webp",
     		imgAlt: "Remera T-shirt estampada manga corta - Verde"
     	},
     	{
@@ -193,7 +211,7 @@
     		marca: "",
     		nombre: "Remera T-shirt estampada manga corta - Celeste",
     		precio: 19.99,
-    		img: "./src/assets/img/nuevo/remera-t-shirt-estampada-manga-corta-celeste-1.webp",
+    		img: "/src/assets/img/nuevo/remera-t-shirt-estampada-manga-corta-celeste-1.webp",
     		imgAlt: "Remera T-shirt estampada manga corta - Celeste"
     	},
     	{
@@ -202,7 +220,7 @@
     		marca: "",
     		nombre: "Remera lisa Manga corta - Gris",
     		precio: 19.99,
-    		img: "./src/assets/img/nuevo/remera-lisa-manga-corta-gris-2.webp",
+    		img: "/src/assets/img/nuevo/remera-lisa-manga-corta-gris-2.webp",
     		imgAlt: "Remera lisa manga corta - Gris"
     	},
     	{
@@ -211,9 +229,12 @@
     		marca: "",
     		nombre: "Remera Estampada Manga Corta - Gris",
     		precio: 19.99,
-    		img: "./src/assets/img/nuevo/remera-estampada-manga-corta-gris-1.webp",
+    		img: "/src/assets/img/nuevo/remera-estampada-manga-corta-gris-1.webp",
     		imgAlt: "Remera Estampada Manga Corta - Gris"
     	},
 
     ];
 
+    // todos los productos
+
+    const productosTotal = productosColeccion.concat(productosNuevo);

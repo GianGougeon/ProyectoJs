@@ -5,10 +5,12 @@
 // variables
 let carrito = [];
 const divisa = '$';
+const DOMitems = document.querySelector('#ropa-categoria-nuevo');
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-vaciar');
 const miLocalStorage = window.localStorage;
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -16,21 +18,11 @@ const miLocalStorage = window.localStorage;
 ////////////////////////////////////////////////////////////////////////////////////
 
 
-// Ordenar ascendente por marcas
-function ordenarASC() {
+//////////////////////////////////////////////////////////////////////////////////////
 
-    productosTotal.sort((a, b) => {
-        a.marca > b.marca ? 1 : -1;
-        // if (a.marca > b.marca)
-        //     return -1;
-        // else
-        //     return 1;
-    });
-}
-// Mostrar Productos en html
-// Seccion 'Nuevo'
-function mostrarProductosNuevo() {
-    tiendaProductos.forEach((element) => {
+
+function mostrarProductos() {
+    productosNuevo.forEach((element) => {
         // Estructura
         let miNodo = document.createElement('div');
         miNodo.classList.add('t8a');
@@ -96,80 +88,9 @@ function mostrarProductosNuevo() {
 
         //Agrega un nuevo nodo al final
         DOMitems.appendChild(miNodo);
-    });
-};
-
-// Secciones de los demas HTML
-
-function mostrarProductosColeccion() {
-    tiendaProductos.forEach((element) => {
-        // Estructura
-        let miNodo = document.createElement('div');
-        miNodo.classList.add('t8a');
-        miNodo.innerHTML = `
-            <!-- Elemento -->
-            
-                            <div>
-                                <article class="t9a">
-                                    <div>
-                                        <div class="t10a">
-                                            <div class="t11a txt-imag-div img-j">
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Botones -->
-                                    <div class="boton-compra-carrito-javascript">
-                                       
-                                    </div>
-                                    <!-- Nombre/Precio/Marca -->
-                                    <div class="t12b-c t12b-c-javascript">
-                                        
-
-                                    </div>
-                                </article>
-                            </div>
-            `;
-
-        /////////////////////// Imagen ///////////////////////
-
-        miNodo.querySelector('.img-j').innerHTML = `
-            <img class = "t12a"
-            src = "${element.img}"
-            alt = "${element.imgAlt}">
-            sizes = "(min-width: 768px) 288px, calc(50vw - 36px)"
-            width = "300"
-            height = "433">`;
 
 
-        ///////////////////////// Titulo/Nombre ////////////////////////
-        //////////////////////////// Precio ////////////////////////////
-        ///////////////////////// Marca <Nuevo> ////////////////////////
 
-        miNodo.querySelector('.t12b-c-javascript').innerHTML = `
-            <!-- Marca -->
-            <span class="t12c-c t12c-c-style">${element.marca}</span>
-            <!-- Titulo/Nombre -->
-            <span class="t12c-c t12c-c-style2">${element.nombre}</span>
-            <!-- Precio -->
-            <span class="t12c-c t12c-c-style3">${element.precio}${divisa}</span>
-            <!-- Logo -->
-            <span class="logo-sec-tienda txt-imag-txt"> Genge </span>`;
-
-
-        /////////////////////// Botones //////////////////////
-        miNodo.querySelector('.boton-compra-carrito-javascript').innerHTML = `
-            <!-- Comprar -->
-            <button class="button-tienda">Comprar</button>
-            <!-- Añadir al carrito -->
-            <button class="button-tienda-2">Añadir al carrito</button>`
-        // Agregar Id a los botones
-        miNodo.querySelector('.button-tienda-2').setAttribute('NodoMarcador', element.id);
-        // Evento agregar al carrito
-        miNodo.querySelector('.button-tienda-2').addEventListener('click', agregarProductoAlCarrito);
-
-        //Agrega un nuevo nodo al final
-        DOMitems.appendChild(miNodo);
     });
 };
 
@@ -182,7 +103,7 @@ function mostrarProductosColeccion() {
 function agregarProductoAlCarrito(evento) {
     // Agrega el Nodo al carrito
     carrito.push(evento.target.getAttribute('NodoMarcador'))
-    
+
     // Actualiza el LocalStorage
     guardarCarritoEnLocalStorage();
     // Actualiza el carrito 
@@ -191,6 +112,7 @@ function agregarProductoAlCarrito(evento) {
 
 
 }
+
 
 // Productos guardados en el carrito
 
@@ -201,10 +123,13 @@ function mostrarCarrito() {
     // Utiliza la propagación para crear un array con los contenidos de un set
     let carritoSinDuplicados = [...new Set(carrito)];
 
+    console.log("carritoSinDuplicados", carritoSinDuplicados);
+
     // Genera los Nodos a partir de carrito
     carritoSinDuplicados.forEach((item) => {
+        console.log("carritoSinDuplicados foreach", carritoSinDuplicados);
         // Obtencion del item que se necesita de la variable base de datos
-        const miItem = productosTotal.filter((itemBaseDatos) => {
+        const miItem = productosNuevo.filter((itemBaseDatos) => {
             // ¿Coincide las id? Solo puede existir un caso
             return itemBaseDatos.id === parseInt(item);
         });
@@ -221,13 +146,13 @@ function mostrarCarrito() {
                 ${numeroUnidadesItem} x 
             </div>
             <div>
-                <img src="${miItem[0]?.img}" width="auto" height="61px" style="padding: 0 2%">
+                <img src="${miItem[0].img}" width="auto" height="61px" style="padding: 0 2%">
             </div>
             <div style="padding: 0 4%">
-                ${miItem[0]?.nombre}
+                ${miItem[0].nombre}
             </div> 
             <div>
-                ${miItem[0]?.precio}${divisa}
+                ${miItem[0].precio}${divisa}
             </div>`;
 
 
@@ -251,7 +176,6 @@ function mostrarCarrito() {
     DOMtotal.textContent = calcularTotal();
     // Actualiza el Numeros, de productos en el carrito
     iconoCarrito();
-    
 
 
 }
@@ -269,7 +193,7 @@ function borrarItemCarrito(evento) {
     carrito = carrito.filter((carritoId) => {
         return carritoId !== id;
     });
-    
+
     // de nuevo a Renderizar
     mostrarCarrito();
     // Actualiza el LocalStorage
@@ -284,11 +208,11 @@ function calcularTotal() {
     // Recorre el array del carrito 
     return carrito.reduce((total, item) => {
         // De cada elemento su precio
-        let miItem = productosTotal.filter((itemBaseDatos) => {
+        let miItem = productosNuevo.filter((itemBaseDatos) => {
             return itemBaseDatos.id === parseInt(item);
         });
         // Suma total
-        return total + miItem[0]?.precio;
+        return total + miItem[0].precio;
         //toFixed (2) devuelve valor en centecimos
     }, 0).toFixed(2);
 }
@@ -300,7 +224,6 @@ function vaciarCarrito() {
     // Array con productos
     // Limpia los productos guardados
     carrito = [];
-    
     // muestra los cambios
     mostrarCarrito();
     // Borra en LocalStorage
@@ -339,4 +262,12 @@ function iconoCarrito() {
     // } else {
     //     numeroAlerta.style.visibility = '';
     // }
+}
+
+function inicio() {
+    // Inicio
+    cargarCarritoDeLocalStorage();
+    mostrarProductos();
+    mostrarCarrito();
+
 }
