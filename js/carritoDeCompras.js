@@ -21,12 +21,9 @@ function ordenarASC() {
 
     productosTotal.sort((a, b) => {
         a.marca > b.marca ? 1 : -1;
-        // if (a.marca > b.marca)
-        //     return -1;
-        // else
-        //     return 1;
     });
 }
+
 // Mostrar Productos en html
 // Seccion 'Nuevo'
 function mostrarProductosNuevo() {
@@ -36,7 +33,6 @@ function mostrarProductosNuevo() {
         miNodo.classList.add('t8a');
         miNodo.innerHTML = `
             <!-- Elemento -->
-            
                             <div>
                                 <article class="t9a">
                                     <div>
@@ -53,7 +49,6 @@ function mostrarProductosNuevo() {
                                     <!-- Nombre/Precio/Marca -->
                                     <div class="t12b-c t12b-c-javascript">
                                         
-
                                     </div>
                                 </article>
                             </div>
@@ -94,8 +89,24 @@ function mostrarProductosNuevo() {
         // Evento agregar al carrito
         miNodo.querySelector('.button-tienda-2').addEventListener('click', agregarProductoAlCarrito);
 
+        //Agrega una alerta al presionar "agregar al carrito"
+        miNodo.addEventListener("click", () => {
+            Toastify({
+                gravity: "bottom",
+                position: "center",
+                duration: 1000,
+                text: "Agregado Correctamente",
+                style: {
+                    background: "#0d0630",
+                },
+            }).showToast();
+        })
+
+
+
         //Agrega un nuevo nodo al final
         DOMitems.appendChild(miNodo);
+
     });
 };
 
@@ -125,7 +136,6 @@ function mostrarProductosColeccion() {
                                     <!-- Nombre/Precio/Marca -->
                                     <div class="t12b-c t12b-c-javascript">
                                         
-
                                     </div>
                                 </article>
                             </div>
@@ -168,12 +178,23 @@ function mostrarProductosColeccion() {
         // Evento agregar al carrito
         miNodo.querySelector('.button-tienda-2').addEventListener('click', agregarProductoAlCarrito);
 
+        //Agrega una alerta al presionar "agregar al carrito"
+        miNodo.addEventListener("click", () => {
+            Toastify({
+                gravity: "bottom",
+                position: "center",
+                duration: 1000,
+                text: "Agregado Correctamente",
+                style: {
+                    background: "#0d0630",
+                },
+            }).showToast();
+        });
+
         //Agrega un nuevo nodo al final
         DOMitems.appendChild(miNodo);
     });
 };
-
-
 
 
 
@@ -182,7 +203,7 @@ function mostrarProductosColeccion() {
 function agregarProductoAlCarrito(evento) {
     // Agrega el Nodo al carrito
     carrito.push(evento.target.getAttribute('NodoMarcador'))
-    
+
     // Actualiza el LocalStorage
     guardarCarritoEnLocalStorage();
     // Actualiza el carrito 
@@ -251,9 +272,6 @@ function mostrarCarrito() {
     DOMtotal.textContent = calcularTotal();
     // Actualiza el Numeros, de productos en el carrito
     iconoCarrito();
-    
-
-
 }
 
 
@@ -269,7 +287,7 @@ function borrarItemCarrito(evento) {
     carrito = carrito.filter((carritoId) => {
         return carritoId !== id;
     });
-    
+
     // de nuevo a Renderizar
     mostrarCarrito();
     // Actualiza el LocalStorage
@@ -288,7 +306,7 @@ function calcularTotal() {
             return itemBaseDatos.id === parseInt(item);
         });
         // Suma total
-        return total + miItem[0]?.precio;
+        return total + miItem[0] ?.precio;
         //toFixed (2) devuelve valor en centecimos
     }, 0).toFixed(2);
 }
@@ -300,7 +318,7 @@ function vaciarCarrito() {
     // Array con productos
     // Limpia los productos guardados
     carrito = [];
-    
+
     // muestra los cambios
     mostrarCarrito();
     // Borra en LocalStorage
@@ -315,7 +333,7 @@ function guardarCarritoEnLocalStorage() {
 // Cargar de LocalStorage
 function cargarCarritoDeLocalStorage() {
     // Chequea si existe un carrito en el localStorage
-    
+
     if (miLocalStorage.getItem('carrito') !== null) {
         // Carga la info
         carrito = JSON.parse(miLocalStorage.getItem('carrito'));
@@ -332,11 +350,4 @@ function iconoCarrito() {
     numeroAlerta.textContent = carrito.length;
     // Oculta el numero si es 0
     carrito.length === 0 ? numeroAlerta.style.visibility = 'hidden' : numeroAlerta.style.visibility = 'visible';
-
-
-    // if (carrito.length === 0) {
-    //     numeroAlerta.style.visibility = 'hidden';
-    // } else {
-    //     numeroAlerta.style.visibility = '';
-    // }
 }

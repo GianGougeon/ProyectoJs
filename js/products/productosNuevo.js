@@ -14,5 +14,5 @@ function inicio() {
     cargarCarritoDeLocalStorage();
     mostrarProductosNuevo();
     mostrarCarrito();
-
+    
 }
