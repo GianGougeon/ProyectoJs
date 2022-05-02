@@ -1,7 +1,4 @@
 // Carrito
-
-
-
 // variables
 let carrito = [];
 const divisa = '$';
@@ -9,25 +6,36 @@ const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-vaciar');
 const miLocalStorage = window.localStorage;
-
-
 ////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Funciones /////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
-
-
+// json
+const datos = '/js/data/productos.json';
+fetch(datos)
+    .then((res) => res.json())
+    .then((data) => {
+        // array de productos
+        let arrayProductos = data
+        // Crea un nuevo array con los datos del json - de los ultimos 6 productos del array para la seccion de Recientes/Nuevos
+        arrayRecientes = data.slice(-6);
+        if (data.length < 7) {
+            arrayRecientes.shift();
+        }
+        // Array completo de productos
+        globalThis.productosTotal = arrayProductos;
+        // Array 6 ultimos productos
+        globalThis.arrayRecientes = arrayRecientes;
+});
 // Ordenar ascendente por marcas
 function ordenarASC() {
-
     productosTotal.sort((a, b) => {
         a.marca > b.marca ? 1 : -1;
     });
 }
-
 // Mostrar Productos en html
 // Seccion 'Nuevo'
 function mostrarProductosNuevo() {
-    tiendaProductos.forEach((element) => {
+    arrayRecientes.forEach((element) => {
         // Estructura
         let miNodo = document.createElement('div');
         miNodo.classList.add('t8a');
@@ -38,24 +46,19 @@ function mostrarProductosNuevo() {
                                     <div>
                                         <div class="t10a">
                                             <div class="t11a txt-imag-div img-j">
-                                                
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Botones -->
                                     <div class="boton-compra-carrito-javascript">
-                                       
                                     </div>
                                     <!-- Nombre/Precio/Marca -->
                                     <div class="t12b-c t12b-c-javascript">
-                                        
                                     </div>
                                 </article>
                             </div>
             `;
-
         /////////////////////// Imagen ///////////////////////
-
         miNodo.querySelector('.img-j').innerHTML = `
             <img class = "t12a"
             src = "${element.img}"
@@ -63,12 +66,9 @@ function mostrarProductosNuevo() {
             sizes = "(min-width: 768px) 288px, calc(50vw - 36px)"
             width = "300"
             height = "433">`;
-
-
         ///////////////////////// Titulo/Nombre ////////////////////////
         //////////////////////////// Precio ////////////////////////////
         ///////////////////////// Marca <Nuevo> ////////////////////////
-
         miNodo.querySelector('.t12b-c-javascript').innerHTML = `
             <!-- Titulo/Nombre -->
             <span class="t12c-c t12c-c-style2">${element.nombre}</span>
@@ -76,8 +76,6 @@ function mostrarProductosNuevo() {
             <span class="t12c-c t12c-c-style3">${element.precio}${divisa}</span>
             <!-- Logo -->
             <span class="logo-sec-nuevo txt-imag-txt-n"> Nuevo </span>`;
-
-
         /////////////////////// Botones //////////////////////
         miNodo.querySelector('.boton-compra-carrito-javascript').innerHTML = `
             <!-- Comprar -->
@@ -88,98 +86,8 @@ function mostrarProductosNuevo() {
         miNodo.querySelector('.button-tienda-2').setAttribute('NodoMarcador', element.id);
         // Evento agregar al carrito
         miNodo.querySelector('.button-tienda-2').addEventListener('click', agregarProductoAlCarrito);
-
         //Agrega una alerta al presionar "agregar al carrito"
-        miNodo.addEventListener("click", () => {
-            Toastify({
-                gravity: "bottom",
-                position: "center",
-                duration: 1000,
-                text: "Agregado Correctamente",
-                style: {
-                    background: "#0d0630",
-                },
-            }).showToast();
-        })
-
-
-
-        //Agrega un nuevo nodo al final
-        DOMitems.appendChild(miNodo);
-
-    });
-};
-
-// Secciones de los demas HTML
-
-function mostrarProductosColeccion() {
-    tiendaProductos.forEach((element) => {
-        // Estructura
-        let miNodo = document.createElement('div');
-        miNodo.classList.add('t8a');
-        miNodo.innerHTML = `
-            <!-- Elemento -->
-            
-                            <div>
-                                <article class="t9a">
-                                    <div>
-                                        <div class="t10a">
-                                            <div class="t11a txt-imag-div img-j">
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Botones -->
-                                    <div class="boton-compra-carrito-javascript">
-                                       
-                                    </div>
-                                    <!-- Nombre/Precio/Marca -->
-                                    <div class="t12b-c t12b-c-javascript">
-                                        
-                                    </div>
-                                </article>
-                            </div>
-            `;
-
-        /////////////////////// Imagen ///////////////////////
-
-        miNodo.querySelector('.img-j').innerHTML = `
-            <img class = "t12a"
-            src = "${element.img}"
-            alt = "${element.imgAlt}">
-            sizes = "(min-width: 768px) 288px, calc(50vw - 36px)"
-            width = "300"
-            height = "433">`;
-
-
-        ///////////////////////// Titulo/Nombre ////////////////////////
-        //////////////////////////// Precio ////////////////////////////
-        ///////////////////////// Marca <Nuevo> ////////////////////////
-
-        miNodo.querySelector('.t12b-c-javascript').innerHTML = `
-            <!-- Marca -->
-            <span class="t12c-c t12c-c-style">${element.marca}</span>
-            <!-- Titulo/Nombre -->
-            <span class="t12c-c t12c-c-style2">${element.nombre}</span>
-            <!-- Precio -->
-            <span class="t12c-c t12c-c-style3">${element.precio}${divisa}</span>
-            <!-- Logo -->
-            <span class="logo-sec-tienda txt-imag-txt"> Genge </span>`;
-
-
-        /////////////////////// Botones //////////////////////
-        miNodo.querySelector('.boton-compra-carrito-javascript').innerHTML = `
-            <!-- Comprar -->
-            <button class="button-tienda">Comprar</button>
-            <!-- Añadir al carrito -->
-            <button class="button-tienda-2">Añadir al carrito</button>`
-        // Agregar Id a los botones
-        miNodo.querySelector('.button-tienda-2').setAttribute('NodoMarcador', element.id);
-        // Evento agregar al carrito
-        miNodo.querySelector('.button-tienda-2').addEventListener('click', agregarProductoAlCarrito);
-
-        //Agrega una alerta al presionar "agregar al carrito"
-        miNodo.addEventListener("click", () => {
+        miNodo.querySelector('.button-tienda-2').addEventListener("click", () => {
             Toastify({
                 gravity: "bottom",
                 position: "center",
@@ -190,43 +98,103 @@ function mostrarProductosColeccion() {
                 },
             }).showToast();
         });
-
         //Agrega un nuevo nodo al final
         DOMitems.appendChild(miNodo);
     });
 };
-
-
-
+// Secciones de los demas HTML
+// Es parecido pero tiene algunos cambios respecto al enterior
+function mostrarProductosColeccion() {
+    tiendaProductos.forEach((element) => {
+        // Estructura
+        let miNodo = document.createElement('div');
+        miNodo.classList.add('t8a');
+        miNodo.innerHTML = `
+            <!-- Elemento -->
+                            <div>
+                                <article class="t9a">
+                                    <div>
+                                        <div class="t10a">
+                                            <div class="t11a txt-imag-div img-j">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Botones -->
+                                    <div class="boton-compra-carrito-javascript">
+                                    </div>
+                                    <!-- Nombre/Precio/Marca -->
+                                    <div class="t12b-c t12b-c-javascript">
+                                    </div>
+                                </article>
+                            </div>
+            `;
+        /////////////////////// Imagen ///////////////////////
+        miNodo.querySelector('.img-j').innerHTML = `
+            <img class = "t12a"
+            src = "${element.img}"
+            alt = "${element.imgAlt}">
+            sizes = "(min-width: 768px) 288px, calc(50vw - 36px)"
+            width = "300"
+            height = "433">`;
+        ///////////////////////// Titulo/Nombre ////////////////////////
+        //////////////////////////// Precio ////////////////////////////
+        ///////////////////////// Marca <Nuevo> ////////////////////////
+        miNodo.querySelector('.t12b-c-javascript').innerHTML = `
+            <!-- Marca -->
+            <span class="t12c-c t12c-c-style">${element.marca}</span>
+            <!-- Titulo/Nombre -->
+            <span class="t12c-c t12c-c-style2">${element.nombre}</span>
+            <!-- Precio -->
+            <span class="t12c-c t12c-c-style3">${element.precio}${divisa}</span>
+            <!-- Logo -->
+            <span class="logo-sec-tienda txt-imag-txt"> Genge </span>`;
+        /////////////////////// Botones //////////////////////
+        miNodo.querySelector('.boton-compra-carrito-javascript').innerHTML = `
+            <!-- Comprar -->
+            <button class="button-tienda">Comprar</button>
+            <!-- Añadir al carrito -->
+            <button class="button-tienda-2">Añadir al carrito</button>`
+        // Agregar Id a los botones
+        miNodo.querySelector('.button-tienda-2').setAttribute('NodoMarcador', element.id);
+        // Evento agregar al carrito
+        miNodo.querySelector('.button-tienda-2').addEventListener('click', agregarProductoAlCarrito);
+        //Agrega una alerta al presionar "agregar al carrito"
+        miNodo.querySelector('.button-tienda-2').addEventListener("click", () => {
+            Toastify({
+                gravity: "bottom",
+                position: "center",
+                duration: 1000,
+                text: "Agregado Correctamente",
+                style: {
+                    background: "#0d0630",
+                },
+            }).showToast();
+        });
+        //Agrega un nuevo nodo al final
+        DOMitems.appendChild(miNodo);
+    });
+};
 // Evento para añadir un producto al carrito
-
 function agregarProductoAlCarrito(evento) {
     // Agrega el Nodo al carrito
     carrito.push(evento.target.getAttribute('NodoMarcador'))
-
     // Actualiza el LocalStorage
     guardarCarritoEnLocalStorage();
     // Actualiza el carrito 
     mostrarCarrito();
-
-
-
 }
-
 // Productos guardados en el carrito
-
 function mostrarCarrito() {
     // Vacia 
     DOMcarrito.textContent = '';
     // Array sin duplicados
     // Utiliza la propagación para crear un array con los contenidos de un set
     let carritoSinDuplicados = [...new Set(carrito)];
-
     // Genera los Nodos a partir de carrito
     carritoSinDuplicados.forEach((item) => {
         // Obtencion del item que se necesita de la variable base de datos
         const miItem = productosTotal.filter((itemBaseDatos) => {
-            // ¿Coincide las id? Solo puede existir un caso
+            // ¿Coincide las id? Solo puede existir uno
             return itemBaseDatos.id === parseInt(item);
         });
         // Cuenta el numero de veces que se repite el producto
@@ -250,8 +218,6 @@ function mostrarCarrito() {
             <div>
                 ${miItem[0]?.precio}${divisa}
             </div>`;
-
-
         // Boton de borrar
         const miBotonDiv = document.createElement('li');
         miBotonDiv.classList.add('d-flex');
@@ -261,25 +227,17 @@ function mostrarCarrito() {
         miBoton.textContent = 'x';
         miBoton.dataset.item = item;
         miBoton.addEventListener('click', borrarItemCarrito);
-
         // Nodos
         miNodo.appendChild(miBotonDiv);
         miBotonDiv.appendChild(miBoton);
         DOMcarrito.appendChild(miNodo);
-
     });
     // Precio total
     DOMtotal.textContent = calcularTotal();
     // Actualiza el Numeros, de productos en el carrito
     iconoCarrito();
 }
-
-
-
-
-
 // Evento para borrar un elemento del carrito
-
 function borrarItemCarrito(evento) {
     // Obtiene el producto ID que hay en el boton pulsado
     const id = evento.target.dataset.item;
@@ -287,17 +245,12 @@ function borrarItemCarrito(evento) {
     carrito = carrito.filter((carritoId) => {
         return carritoId !== id;
     });
-
     // de nuevo a Renderizar
     mostrarCarrito();
     // Actualiza el LocalStorage
     guardarCarritoEnLocalStorage();
-
 }
-
-
 // Calcula el precio total de los productos repetidos
-
 function calcularTotal() {
     // Recorre el array del carrito 
     return carrito.reduce((total, item) => {
@@ -310,39 +263,30 @@ function calcularTotal() {
         //toFixed (2) devuelve valor en centecimos
     }, 0).toFixed(2);
 }
-
-
 // Vacia el carrito y vuelve a pintar
-
 function vaciarCarrito() {
     // Array con productos
     // Limpia los productos guardados
     carrito = [];
-
     // muestra los cambios
     mostrarCarrito();
     // Borra en LocalStorage
     localStorage.clear();
-
 }
 // guardar en LocalStorage
 function guardarCarritoEnLocalStorage() {
     miLocalStorage.setItem('carrito', JSON.stringify(carrito));
-
 }
 // Cargar de LocalStorage
 function cargarCarritoDeLocalStorage() {
     // Chequea si existe un carrito en el localStorage
-
     if (miLocalStorage.getItem('carrito') !== null) {
         // Carga la info
         carrito = JSON.parse(miLocalStorage.getItem('carrito'));
     }
 }
-
 // Eventos
 DOMbotonVaciar.addEventListener('click', vaciarCarrito);
-
 // Muestra numero de productos en el carrito
 function iconoCarrito() {
     // selecciona la etiqueta numero en el html

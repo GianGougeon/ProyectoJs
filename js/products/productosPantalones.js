@@ -1,18 +1,13 @@
-// Pintar los productos
-const DOMitems = document.querySelector('#ropa-categoria');
-// filtro
-const productosPantalones = productosTotal.filter(producto => producto.categoria === "pantalones");
-
-console.log("filtro?", productosPantalones);
-
-// puente al forEach de los productos
-const tiendaProductos = productosPantalones;
-
 function inicio() {
+    // Pintar los productos
+    globalThis.DOMitems = document.querySelector('#ropa-categoria');
+    // filtro
+    const productosPantalones = productosTotal.filter(producto => producto.categoria === "pantalones");
+    // puente al forEach de los productos
+    globalThis.tiendaProductos = productosPantalones;
     // Inicio
     cargarCarritoDeLocalStorage();
     ordenarASC();
     mostrarProductosColeccion();
     mostrarCarrito();
 }
-
