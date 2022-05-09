@@ -734,7 +734,7 @@
                         <!-- Elementos generados con JS -->
                         <div style="margin: auto;" id="items"></div>
                         <!-- Carrito -->
-                        <div class="container">
+                        <div id="items-c" class="container ">
                             <h6 class="carrito-h">Carrito</h6>
                             <!-- Elementos del carrito -->
                             <ul id="carrito" style="padding: 0 5%;" class="list-group"></ul>
@@ -743,6 +743,7 @@
                             <div style="padding: 0 0 0 5%">
                                 <p class="text-right">Total: <span id="total"></span>&dollar;</p>
                                 <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                                <a href="#!" title="Close" class="modal-close">X</a>
                                 <ul class="text-decoration-none">
                                     <li><a href="#!" title="Close" class="modal-close">X</a></li>
                                 </ul>
@@ -915,8 +916,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- scripts -->
     
-    <script defer src="/js/products/productosNuevo.js"></script>
     <script src="/js/carritoDeCompras.js"></script>
+    <script defer src="/js/products/productosNuevo.js"></script>
+    
 
 </body>
 

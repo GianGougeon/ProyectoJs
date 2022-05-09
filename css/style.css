@@ -35,6 +35,10 @@ header {
   z-index: 999;
 }
 
+.disclaimer {
+  display: none;
+}
+
 #user-navbar {
   margin: 0;
   padding: 0;
@@ -1769,6 +1773,11 @@ img {
   overflow-y: scroll;
 }
 
+@media (max-width: 700px) {
+  #items-c {
+    width: 400px;
+  }
+}
 small {
   color: lightgray;
 }

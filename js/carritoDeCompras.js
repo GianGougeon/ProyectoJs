@@ -1,31 +1,37 @@
 // Carrito
+
 // variables
 let carrito = [];
+let productosTotal = [];
 const divisa = '$';
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-vaciar');
 const miLocalStorage = window.localStorage;
-////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////// Funciones /////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
+
+
 // json
-const datos = '/js/data/productos.json';
-fetch(datos)
-    .then((res) => res.json())
-    .then((data) => {
-        // array de productos
-        let arrayProductos = data
-        // Crea un nuevo array con los datos del json - de los ultimos 6 productos del array para la seccion de Recientes/Nuevos
-        arrayRecientes = data.slice(-6);
-        if (data.length < 7) {
-            arrayRecientes.shift();
-        }
-        // Array completo de productos
-        globalThis.productosTotal = arrayProductos;
-        // Array 6 ultimos productos
-        globalThis.arrayRecientes = arrayRecientes;
-});
+json();
+async function json() {
+    // Carga de datos
+    const datosJson = "/js/data/productos.json"
+    fetch(datosJson)
+        .then(res => res.json())
+        .then(function (res) {
+            res.forEach(element => {
+                productosTotal.push(element);
+            });
+        })
+        .then(() => {
+            // Array productos
+            
+            globalThis.productosTotal = productosTotal
+
+        })
+        .catch(err => console.log("Error al cargar la informacion...",err));
+}
+//////////////////////////////// Funciones /////////////////////////////////////////
+
 // Ordenar ascendente por marcas
 function ordenarASC() {
     productosTotal.sort((a, b) => {
@@ -35,7 +41,7 @@ function ordenarASC() {
 // Mostrar Productos en html
 // Seccion 'Nuevo'
 function mostrarProductosNuevo() {
-    arrayRecientes.forEach((element) => {
+    productosTotal.forEach((element) => {
         // Estructura
         let miNodo = document.createElement('div');
         miNodo.classList.add('t8a');
@@ -100,7 +106,8 @@ function mostrarProductosNuevo() {
         });
         //Agrega un nuevo nodo al final
         DOMitems.appendChild(miNodo);
-    });
+    })
+    
 };
 // Secciones de los demas HTML
 // Es parecido pero tiene algunos cambios respecto al enterior
@@ -184,7 +191,7 @@ function agregarProductoAlCarrito(evento) {
     mostrarCarrito();
 }
 // Productos guardados en el carrito
-function mostrarCarrito() {
+async function mostrarCarrito() {
     // Vacia 
     DOMcarrito.textContent = '';
     // Array sin duplicados
@@ -193,7 +200,7 @@ function mostrarCarrito() {
     // Genera los Nodos a partir de carrito
     carritoSinDuplicados.forEach((item) => {
         // Obtencion del item que se necesita de la variable base de datos
-        const miItem = productosTotal.filter((itemBaseDatos) => {
+        const miItem = productosTotal?.filter((itemBaseDatos) => {
             // ¿Coincide las id? Solo puede existir uno
             return itemBaseDatos.id === parseInt(item);
         });
@@ -295,3 +302,5 @@ function iconoCarrito() {
     // Oculta el numero si es 0
     carrito.length === 0 ? numeroAlerta.style.visibility = 'hidden' : numeroAlerta.style.visibility = 'visible';
 }
+
+
