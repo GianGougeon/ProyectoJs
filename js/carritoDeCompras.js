@@ -1,5 +1,5 @@
 // Carrito
-
+json();
 // variables
 let carrito = [];
 let productosTotal = [];
@@ -11,7 +11,7 @@ const miLocalStorage = window.localStorage;
 
 
 // json
-json();
+
 async function json() {
     // Carga de datos
     const datosJson = "/js/data/productos.json"
@@ -27,6 +27,8 @@ async function json() {
             
             globalThis.productosTotal = productosTotal
 
+            return productosTotal
+
         })
         .catch(err => console.log("Error al cargar la informacion...",err));
 }
@@ -41,7 +43,7 @@ function ordenarASC() {
 // Mostrar Productos en html
 // Seccion 'Nuevo'
 function mostrarProductosNuevo() {
-    productosTotal.forEach((element) => {
+    productosRecientes.forEach((element) => {
         // Estructura
         let miNodo = document.createElement('div');
         miNodo.classList.add('t8a');
