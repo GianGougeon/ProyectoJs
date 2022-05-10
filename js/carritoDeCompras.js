@@ -2,7 +2,6 @@
 json();
 // variables
 let carrito = [];
-let productosTotal = [];
 const divisa = '$';
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
@@ -13,9 +12,11 @@ const miLocalStorage = window.localStorage;
 // json
 
 async function json() {
+    // array vacio
+    let productosTotal = [];
     // Carga de datos
     const datosJson = "/js/data/productos.json"
-    fetch(datosJson)
+    await fetch(datosJson)
         .then(res => res.json())
         .then(function (res) {
             res.forEach(element => {
@@ -23,15 +24,16 @@ async function json() {
             });
         })
         .then(() => {
-            // Array productos
             
-            globalThis.productosTotal = productosTotal
+            globalThis.productosTotal = productosTotal;
 
             return productosTotal
-
         })
         .catch(err => console.log("Error al cargar la informacion...",err));
 }
+
+
+
 //////////////////////////////// Funciones /////////////////////////////////////////
 
 // Ordenar ascendente por marcas
