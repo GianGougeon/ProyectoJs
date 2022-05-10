@@ -1,5 +1,4 @@
 function inicio() {
-    console.log('inicio');
     // Pintar los productos
     globalThis.DOMitems = document.querySelector('#ropa-categoria');
     // filtro
