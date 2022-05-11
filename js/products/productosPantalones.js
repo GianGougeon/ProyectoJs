@@ -11,5 +11,5 @@ function inicio() {
         ordenarASC();
         mostrarProductosColeccion();
         mostrarCarrito();
-    }, 2500);
+    }, dLay);
 }

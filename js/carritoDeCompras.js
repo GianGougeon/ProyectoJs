@@ -8,7 +8,8 @@ const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-vaciar');
 const miLocalStorage = window.localStorage;
-
+// dlay al cargar productos
+const dLay = 2000;
 
 // json
 async function json() { 
